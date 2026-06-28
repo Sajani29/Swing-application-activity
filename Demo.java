@@ -7,30 +7,15 @@ class Demo{
 		f1.setLocationRelativeTo(null);
 		f1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
-		JButton b1=new JButton();
-		b1.setText("Hello");
-		b1.setFont(new Font("",1,30));
-		f1.add("South",b1);
+		JButton[] buttonArray = new JButton[5];
+		String[] buttonName = {"North","South","West","East","Center"};
 		
-		JButton b2 = new JButton();
-		b2.setText("Hello North");
-		b2.setFont(new Font("",1,30));
-		f1.add("North",b2);
-		
-		JButton b3 = new JButton();
-		b3.setText("Hello West");
-		b3.setFont(new Font("",1,30));
-		f1.add("West",b3);
-		
-		JButton b4 = new JButton();
-		b4.setText("Hello East");
-		b4.setFont(new Font("",1,30));
-		f1.add("East",b4);
-		
-		JButton b5 = new JButton();
-		b5.setText("Hello Center");
-		b5.setFont(new Font("",1,30));
-		f1.add("Center",b5);
+		for (int i = 0; i < buttonArray.length; i++)
+		{
+			buttonArray[i] = new JButton(buttonName[i]);
+			buttonArray[i].setFont(new Font("",1,30));
+			f1.add(buttonName[i],buttonArray[i]);
+		}
 		f1.pack();
 		f1.setVisible(true);
 	}
