@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+
 class Demo{
 	public static void main(String args[]){
 		JFrame f1=new JFrame("Calculator");	
@@ -7,16 +8,24 @@ class Demo{
 		f1.setLocationRelativeTo(null);
 		f1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
-		JButton[] buttonArray = new JButton[5];
-		String[] buttonName = {"North","South","West","East","Center"};
+		f1.setLayout(new FlowLayout(FlowLayout.RIGHT));
+		//0->FlowLayout.CENTER
+		//1->FlowLayout.RIGHT
+		//2->FlowLayout.LEFT
+		JButton btAdd=new JButton("Add "); //setText(String)
+		JButton btDelete=new JButton("Delete");
+		JButton btUpdate=new JButton("Update");
+		JButton btView=new JButton("View");
+		btAdd.setFont(new Font("",1,30));
+		btDelete.setFont(new Font("",1,30));
+		btUpdate.setFont(new Font("",1,30));
+		btView.setFont(new Font("",1,30));
 		
-		for (int i = 0; i < buttonArray.length; i++)
-		{
-			buttonArray[i] = new JButton(buttonName[i]);
-			buttonArray[i].setFont(new Font("",1,30));
-			f1.add(buttonName[i],buttonArray[i]);
-		}
-		f1.pack();
+		f1.add(btAdd);
+		f1.add(btUpdate);
+		f1.add(btDelete);
+		f1.add(btView);
+		
 		f1.setVisible(true);
 	}
 }
