@@ -181,7 +181,51 @@ class Demo{
 
 
 // REVISE LAST WEEK THINGS
-
+import javax.swing.*;
+import java.awt.*;
+class Demo{
+	public static void main(String[] args){
+		JFrame f1 = new JFrame("Calculator");
+		f1.setSize(500,500);
+		f1.setLocationRelativeTo(null);
+		f1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		f1.setLayout(new FlowLayout(FlowLayout.LEFT));
+		JButton[] btnArray = new JButton[5];
+		String[] btnNames = {"North","South","West","East","Center"};
+		for (int i = 0; i <btnArray.length ; i++)
+		{
+			btnArray[i] = new JButton(btnNames[i]);
+			btnArray[i].setFont(new Font("",1,30));
+			f1.add(btnNames[i],btnArray[i]);
+		}
+		
+		/*JButton btnNorth = new JButton("North");
+		btnNorth.setFont(new Font("",1,30));
+		
+		JButton btnSouth = new JButton("South");
+		btnNorth.setFont(new Font("",1,30));
+		
+		JButton btnEast = new JButton("East");
+		btnEast.setFont(new Font("",1,30));
+		
+		JButton btnWest = new JButton("West");
+		btnWest.setFont(new Font("",1,30));
+		
+		JButton btnCenter = new JButton("Center");
+		btnCenter.setFont(new Font("",1,30));
+		
+		
+		f1.add("North",btnNorth);
+		f1.add("South",btnSouth);
+		f1.add("East",btnEast);
+		f1.add("West",btnWest);
+		f1.add("Center",btnCenter);
+		*/
+		
+		f1.pack();
+		f1.setVisible(true);
+	}
+}
 
 
 
