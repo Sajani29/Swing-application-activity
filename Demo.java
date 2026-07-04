@@ -180,7 +180,44 @@ class Demo{
 
 
 
-// REVISE LAST WEEK THINGS
+// REVISE LAST WEEK THINGS===============
+
+//=====================
+import javax.swing.*;
+import java.awt.*;
+
+class Demo{
+	public static void main(String args[]){
+		JFrame f1=new JFrame("BorderLayout");	
+		JFrame f2=new JFrame("FlowLayout");	
+		f1.setSize(300,300);
+		f2.setSize(300,300);
+		f1.setLocationRelativeTo(null);
+		f2.setLocationRelativeTo(null);
+		f1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		f2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		
+		f1.setLayout(new BorderLayout());//->Default BorderLayout
+		f2.setLayout(new FlowLayout(FlowLayout.CENTER));
+		
+		JTextField txtBorderLayout=new JTextField(5);
+		JTextField txtFlowLayout=new JTextField(5);
+		
+		txtBorderLayout.setFont(new Font("",1,30));
+		txtFlowLayout.setFont(new Font("",1,30));
+		
+		f1.add("North",txtBorderLayout);
+		f1.add("South",new JButton("Test"));
+		
+		f2.add(txtFlowLayout);
+		
+		f1.setVisible(true);
+		f2.setVisible(true);
+	}
+}
+
+
+/*
 import javax.swing.*;
 import java.awt.*;
 class Demo{
@@ -190,6 +227,10 @@ class Demo{
 		f1.setLocationRelativeTo(null);
 		f1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		f1.setLayout(new FlowLayout(FlowLayout.LEFT));
+		//0->FlowLayout.CENTER
+		//1->FlowLayout.RIGHT
+		//2->FlowLayout.LEFT
+
 		JButton[] btnArray = new JButton[5];
 		String[] btnNames = {"North","South","West","East","Center"};
 		for (int i = 0; i <btnArray.length ; i++)
@@ -198,8 +239,9 @@ class Demo{
 			btnArray[i].setFont(new Font("",1,30));
 			f1.add(btnNames[i],btnArray[i]);
 		}
-		
-		/*JButton btnNorth = new JButton("North");
+		*/
+		/*
+		JButton btnNorth = new JButton("North");
 		btnNorth.setFont(new Font("",1,30));
 		
 		JButton btnSouth = new JButton("South");
@@ -220,14 +262,14 @@ class Demo{
 		f1.add("East",btnEast);
 		f1.add("West",btnWest);
 		f1.add("Center",btnCenter);
-		*/
+		
 		
 		f1.pack();
 		f1.setVisible(true);
 	}
 }
 
-
+*/
 
 
 
