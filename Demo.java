@@ -1,102 +1,50 @@
-//AD STUDENT FORM
 import javax.swing.*;
 import java.awt.*;
-class AddStudentForm extends JFrame{
-	private JLabel addStudentForm;
-	private JLabel[] detailsFormArray;
-	private String[] detailsForm;
-	private JPanel detailsPanel;
-	private JPanel txtPanel;
-	private JButton btnAdd;
-	private JButton btnCancel;
-	private JPanel southButtonPanel;
+import java.awt.event.*;
+class Calculator extends JFrame{
+	private JButton btExit;
+	private JButton btAdd;
+	private JButton btCancel;
 	
-	AddStudentForm(String title){
+	Calculator(String title){
 		setTitle(title);
 		setSize(300,300);
 		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout(new FlowLayout());
+		btExit=new JButton("Exit");
+		btExit.setFont(new Font("",1,25));
+		btExit.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				System.out.println("Exited...");
+				System.exit(0);	//dispose();
+			}
+		});
 		
-		addStudentForm = new JLabel("Add Student Form");
-		addStudentForm.setFont(new Font("",1,20));
-		addStudentForm.setLayout(new BorderLayout());
-		addStudentForm.setHorizontalAlignment(JLabel.CENTER);
-		add("North",addStudentForm);
+		JPanel southPanel=new JPanel(new FlowLayout(FlowLayout.RIGHT));
+		btAdd=new JButton("Add Student");
+		btCancel=new JButton("Cancel");
+		btAdd.setFont(new Font("",1,20));
+		btCancel.setFont(new Font("",1,20));
 		
-		btnAdd = new JButton("ADD");
-		btnAdd.setFont(new Font("",1,20));
-		btnCancel = new JButton("CANCEL");
-		btnCancel.setFont(new Font("",1,20));
-		southButtonPanel = new JPanel();
-		southButtonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
-		southButtonPanel.add("East",btnAdd);
-		southButtonPanel.add("West",btnCancel);
-		add("South",southButtonPanel);
-		//-------------------------------------------
-		JLabel lblStudentID = new JLabel("Student ID");
-		JLabel lblName = new JLabel("Name");
-		JLabel lblPRFMarks = new JLabel("PRF Marks");
-		JLabel lblDBMSMarks = new JLabel("DBMS Marks");
-		lblStudentID.setFont(new Font("",1,20));
-		lblName.setFont(new Font("",1,20));
-		lblPRFMarks.setFont(new Font("",1,20));
-		lblDBMSMarks.setFont(new Font("",1,20));
-		
-		JPanel lblPanel = new JPanel();
-		lblPanel.setLayout(new GridLayout(4,1));
-		lblPanel.add(lblStudentID);
-		lblPanel.add(lblName);
-		lblPanel.add(lblPRFMarks);
-		lblPanel.add(lblDBMSMarks);
-		add("West",lblPanel);
-		
-		JTextField txtID = new JTextField(5);
-		txtID.setFont(new Font("",1,20));
-		JTextField txtName = new JTextField(10);
-		txtName.setFont(new Font("",1,20));
-		JTextField txtPRFMarks = new JTextField(4);
-		txtPRFMarks.setFont(new Font("",1,20));
-		JTextField txtDBSMarks = new JTextField(4);
-		txtDBSMarks.setFont(new Font("",1,20));
-		txtPanel = new JPanel();
-		txtPanel.setLayout(new GridLayout(4,1));
-		
-		JPanel idTextPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		idTextPanel.add(txtID);
-		txtPanel.add(idTextPanel);
-		
-		JPanel nameTextPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		nameTextPanel.add(txtName);
-		txtPanel.add(nameTextPanel);
-		
-		JPanel prfMarksTextPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		prfMarksTextPanel.add(txtPRFMarks);
-		txtPanel.add(prfMarksTextPanel);
-		
-		JPanel dbmsMarksTextPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		dbmsMarksTextPanel.add(txtDBSMarks);
-		txtPanel.add(dbmsMarksTextPanel);
-		add("Center",txtPanel);
-		
-		
+		southPanel.add(btAdd);
+		southPanel.add(btCancel);
+		add("South",southPanel);
+		btAdd.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				System.out.println("Pressed add");
+				System.exit(0);	//dispose();
+			}
+		});
+		add("North",btExit);
 	}
-}
+} 
 class Demo{
-	public static void main(String[] args){
-		AddStudentForm formOne = new AddStudentForm("Add Student Form");
-		formOne.setVisible(true);
+	public static void main(String args[]){
+		Calculator c1=new Calculator("Calculator");
+		c1.setVisible(true);
 	}
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
