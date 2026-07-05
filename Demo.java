@@ -184,7 +184,73 @@ class Demo{
 
 //=====================
 
+//Q94
 import javax.swing.*;
+import java.awt.*;
+class Demo{
+	public static void main(String args[]){
+		JFrame f1=new JFrame("Calculator");	
+		f1.setSize(500,500);
+		f1.setLocationRelativeTo(null);
+		f1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		
+		JTextField textFeild = new JTextField();
+		textFeild.setLayout(new BorderLayout());
+		//textFeild.setSize(200,200);
+		f1.add("South",textFeild);
+		
+		JPanel btnsPanel = new JPanel();
+		btnsPanel.setLayout(new GridLayout(4,4,3,3));
+		
+		JButton[] btnArray=new JButton[16];
+		String[] btnText={"7","8","9","*","4","5","6","/","1","2","3","+","0",".","=","-"}; 
+		for (int i = 0; i < 16; i++){
+			btnArray[i]=new JButton(btnText[i]);
+			btnArray[i].setFont(new Font("",1,30));
+			btnsPanel.add(btnArray[i],btnText[i]);
+			f1.add(btnsPanel);
+			
+		}
+		f1.setVisible(true);
+	}
+}
+//Q93 JPanel
+/*import javax.swing.*;
+import java.awt.*;
+class Demo{
+	public static void main(String args[]){
+		JFrame f1=new JFrame("Calculator");	
+		f1.setSize(300,300);
+		f1.setLocationRelativeTo(null);
+		f1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		
+		JButton btnNorth = new JButton("North");
+		JButton btnSouth = new JButton("South");
+		JButton btnEast = new JButton("East");
+		JButton btnWest = new JButton("West");
+		
+		JButton btnOne =  new JButton("1");
+		JButton btnTwo =  new JButton("2");
+		JButton btnThree =  new JButton("3");
+		JButton btnFour =  new JButton("4");
+		
+		JPanel btnCenterPanel = new JPanel();
+		btnCenterPanel.setLayout(new GridLayout(2,2));
+		btnCenterPanel.add(btnOne);
+		btnCenterPanel.add(btnTwo);
+		btnCenterPanel.add(btnThree);
+		btnCenterPanel.add(btnFour);
+		f1.add("North",btnNorth);
+		f1.add("South",btnSouth);
+		f1.add("West",btnWest);
+		f1.add("East",btnEast);
+		f1.add("Center",btnCenterPanel);
+		f1.setVisible(true);
+	}
+}
+*/
+
+/*import javax.swing.*;
 import java.awt.*;
 class Demo{
 	public static void main(String args[]){
@@ -205,7 +271,7 @@ class Demo{
 	}
 }
 
-
+*/
 
 
 
